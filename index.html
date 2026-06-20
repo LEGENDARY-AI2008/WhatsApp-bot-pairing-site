@@ -341,7 +341,7 @@
     btn.innerHTML = '<span class="spinner"></span> Generating code...';
 
     try {
-      const res = await fetch('/api/pair', {
+      const res = await fetch('https://ahead-obscurity-swinging.ngrok-free.dev/pair', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ number })
@@ -382,7 +382,7 @@
 
     pollTimer = setInterval(async () => {
       try {
-        const res = await fetch(`/api/status/${currentNumber}`);
+        const res = await fetch(`https://ahead-obscurity-swinging.ngrok-free.dev/status/${currentNumber}`);
         const data = await res.json();
         if (data.paired) {
           clearInterval(pollTimer);
